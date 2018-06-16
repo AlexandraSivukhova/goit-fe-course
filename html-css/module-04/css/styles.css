@@ -179,9 +179,9 @@ button {
     border-radius: 5px;
     border: none;
 }
-button:active {
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.39);
-}
 button:focus {
     outline: none;
+}
+button:active {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.39);
 }
