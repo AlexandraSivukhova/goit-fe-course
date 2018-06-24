@@ -94,28 +94,32 @@ nav a:hover {
     letter-spacing: -0.02em;
     color: #fff;
 }
+#slider .arrow {
+    position: absolute;
+    z-index: 2;
+    width: 1110px;
+    height: 104px;
+    left: 50%;
+    top: 50%;
+    margin-left: -555px;
+    margin-top: -52px;
+}
 #slider .arrow-left a, 
 #slider .arrow-right a {
     display: block;
     width: 104px;
     height: 104px;
     background: rgb(10%, 74%, 61%, 0.5);
-    position: absolute;  
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
 }
 #slider .arrow-left a {
-    left: 15%;
-    top: 50%;
-    margin: -52px;
+    left: 0;
 }
-#slider .arrow-right a {
-    left: 85%;
-    top: 50%;
-    margin: -52px;
-}
+#slider .arrow-left a:hover,
 #slider .arrow-right a:hover {
-    background: #1abc9c;
-}
-#slider .arrow-left a:hover {
     background: #1abc9c;
 }
 #slider .arrow-left a::before,
