@@ -40,6 +40,9 @@ nav a {
 }
 nav a:hover {
     color: #f38181; 
+    transition-property: color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
 }
 nav li::after {
     content: "";
@@ -253,9 +256,18 @@ img.photo {
     font-weight: 400;
     font-size: 14px;
 }
-span {
-    color: #f38181;
+.wrp--footer a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333333;
 }
+.wrp--footer a:hover {
+    color: #f38181;
+    transition-property: color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    }
 .wrp--footer .text {
     display: inline-block;
     width: 220px;
