@@ -204,8 +204,8 @@ input, textarea {
     border: 1px solid #bbbbbb;
     outline: none;
 }
-.subject:active, .subject:focus {
-    border: 1px solid #fed136;
+.subject:focus {
+    box-shadow: 0 0 2px 2px #36fe36;
 }
 input {
     width: 435px;
