@@ -232,11 +232,11 @@ textarea {
     margin-bottom: 115px;
     cursor: pointer;
 }
-.outline:required:valid {
-    box-shadow: 0 0 2px 2px #36fe36;
-}
-.outline:focus:invalid {
+.outline:invalid:not(:placeholder-shown) {
     box-shadow: 0 0 2px 2px #fe3636;
+}
+.outline:valid:not(:placeholder-shown) {
+    box-shadow: 0 0 2px 2px #36fe36;
 } 
 .clearfix::after {
     content: '';
