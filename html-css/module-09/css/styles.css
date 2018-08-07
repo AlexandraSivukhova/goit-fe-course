@@ -107,11 +107,11 @@ header {
 }
 .icon {
     position: absolute;
-    top: 65%;
-    right: 15%;
-    width: 33px;
-    height: 33px;
-    border: 3px solid #fff;
+    top: 70%;
+    right: 17%;
+    width: 43px;
+    height: 43px;
+    border: 4px solid #fff;
     border-radius: 50%;   
     background-color: #ff4e50;
     z-index: 1;
@@ -178,6 +178,9 @@ header {
         left: 50px;
         top: -35px;
         margin-top: 0;
+    }
+    .others {
+      width: 180px;
     }
 }
 /*==========  Mobile First Method  ==========*/
