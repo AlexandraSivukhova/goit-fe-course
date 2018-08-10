@@ -51,13 +51,13 @@ a {text-decoration: none;}
 .menu__item:last-of-type {
     margin-right: 0;
 }
-.menu__hover {
+.menu--hover {
     display: block;
     color: #fff;
     text-transform: uppercase;
     font-size: 14px;  
 }
-.menu__hover:hover {
+.menu--hover:hover {
     color: #fce38a; 
     -webkit-transition-property: color; 
     -o-transition-property: color; 
@@ -102,7 +102,7 @@ a {text-decoration: none;}
 .svg_icon {
     fill: #fff;
 }
-.menu__hover:hover > .svg_icon {
+.menu--hover:hover > .svg_icon {
     fill: #fce38a;
 }
 .svg_icon {
@@ -110,18 +110,16 @@ a {text-decoration: none;}
     height: 20px;
     vertical-align: middle;
 }
-.header .header__title {
+.title__header .title__header--l {
     color: #fff;
     font-size: 72px;
     margin: 0 0 45px 0;
 }
-.header h1 {
-    font-family: 'Montserrat', sans-serif;
+.title__header .subtitle__header--l {
     font-size: 150px;
     line-height: 140px;
-    color: #fff;
-    text-transform: uppercase;
     margin: 0 0 90px 0;
+    color: #fff;
 }
 .header .btn {
     font-family: 'Montserrat', sans-serif;
@@ -136,23 +134,23 @@ a {text-decoration: none;}
 .btn--hover:hover {
     color: #f38181;
 }
-
-.wrp h2 {
-    font-family: 'Kaushan Script', cursive;
-    font-size: 24px;
+.title {
     color: #333333;
     text-align: center;
-    margin-bottom: 22px;
 }
-.wrp h3 {
+.title__main {
+    
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    margin: 50px 0 22px 0;
+} 
+.subtitle__main {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 30px;
-    color: #333333;
     text-transform: uppercase;
-    text-align: center;
 }
-.wrp h3::after {
+.subtitle__main--after::after {
     content: "";
     display: block;
     height: 3px;
@@ -162,7 +160,7 @@ a {text-decoration: none;}
     margin-top: 42px;
     margin-bottom: 65px;
 }
-.wrp .services {
+.wrp .container {
     width: 1150px;
     height: 240px;
     display: -webkit-box;
@@ -180,13 +178,7 @@ a {text-decoration: none;}
     -ms-flex-line-pack: justify;
         align-content: space-between;
 }
-.icon-services {
-    margin-top: 20px;
-}
-.wrp .services .text-services {
-    width: 300px;
-}
-.wrp .services .item {
+.services {
     width: 361px;
     height: 67px;
     display: -webkit-box;
@@ -202,8 +194,14 @@ a {text-decoration: none;}
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
             justify-content: space-between;
-    }
-.wrp .services .text-services h4 {
+}
+.services__benifits {
+    width: 300px;
+}
+.services__icon {
+    margin-top: 20px;
+}
+.services__title {
     width: 300px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -212,14 +210,14 @@ a {text-decoration: none;}
     text-transform: uppercase;
     margin-bottom: 19px;
 }
-.wrp .services .text-services p {
+.services__text {
     width: 300px;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     line-height: 24px;
     color: #999999;
 }
-.subtitle p {
+.about {
     width: 950px;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
@@ -242,18 +240,18 @@ a {text-decoration: none;}
     margin-bottom: 80px;
     margin-top: 90px;
 }
-.crewman {
+.team__card {
     position: relative;
     width: 380px;
     height: 470px;
     z-index: 1;
 }
-.crewman > picture {
+.team__card > .team__photo {
     position: absolute;
     z-index: 1;
 }
 
-picture.photo {
+.team__photo {
     -webkit-transform: translateX(0px);
     -ms-transform: translateX(0px);
     transform: translateX(0px);
@@ -272,7 +270,7 @@ picture.photo {
     -o-transition-timing-function: linear;
             transition-timing-function: linear;
 }
-.crewman:hover picture.photo {
+.team__card:hover .team__photo {
     -webkit-transform: translateX(-10px);
     -ms-transform: translateX(-10px);
     transform: translateX(-10px);
@@ -280,7 +278,7 @@ picture.photo {
     -ms-transform: translateY(-10px);
             transform: translateY(-10px);
 }
-.crewman::after {
+.team__card::after {
     content: "";
     width: 380px;
     height: 470px;
@@ -288,7 +286,7 @@ picture.photo {
     z-index: -1;
     background-color: #95e1d3;
 }
-.crewman:hover .card-hover {
+.team__card:hover .team__card--hover {
     opacity: 1;
     -webkit-box-shadow: 10px 10px #95e1d3;
     box-shadow: 10px 10px #95e1d3;
@@ -299,7 +297,7 @@ picture.photo {
 -ms-transform: translateY(-10px);
     transform: translateY(-10px);
 }
-.card-hover {
+.team__card--hover {
     width: 380px;
     height: 470px;
     display: -webkit-box;
@@ -344,7 +342,7 @@ picture.photo {
     margin: auto;
     z-index: 3;
 }
-.icon-wrapper .icon {
+.icon-wrapper__icon {
     width: 56px;
     height: 56px;
     background-color: #fce38a;
@@ -353,25 +351,25 @@ picture.photo {
     display: flex;
     margin-right: 1px;
 }
-.icon:last-of-type {
+.icon-wrapper__icon:last-of-type {
     margin-right: 0;
 }
-.icon:hover {
+.icon-wrapper__icon:hover {
     background-color: #f38181;
 }
-.color {
+.icon-wrapper__icon--color {
     width: 32px;
     height: 32px;
     margin: auto;
     fill: #f38181;
 }
-.icon:hover > .color {
+.icon-wrapper__icon:hover > .icon-wrapper__icon--color {
     fill: #fff;
 }
 .icon-wrapper .icon img {
     margin: auto
 }
-.box-team .team .info {
+.team__info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -383,7 +381,7 @@ picture.photo {
     -ms-flex-align: center;
             align-items: center;
 }
-.box-team .team .info .name {
+.info__name {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -391,7 +389,7 @@ picture.photo {
     text-transform: uppercase; 
     margin: 30px 0 15px 0;
 }
-.box-team .team .info .position {
+.info__position {
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     line-height: 24px;
