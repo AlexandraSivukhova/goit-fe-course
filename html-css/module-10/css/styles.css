@@ -51,13 +51,13 @@ a {text-decoration: none;}
 .menu__item:last-of-type {
     margin-right: 0;
 }
-.menu--hover {
+.menu__item--hover {
     display: block;
     color: #fff;
     text-transform: uppercase;
     font-size: 14px;  
 }
-.menu--hover:hover {
+.menu__item--hover:hover {
     color: #fce38a; 
     -webkit-transition-property: color; 
     -o-transition-property: color; 
@@ -102,7 +102,7 @@ a {text-decoration: none;}
 .svg_icon {
     fill: #fff;
 }
-.menu--hover:hover > .svg_icon {
+.menu__item--hover:hover > .svg_icon {
     fill: #fce38a;
 }
 .svg_icon {
@@ -110,12 +110,12 @@ a {text-decoration: none;}
     height: 20px;
     vertical-align: middle;
 }
-.title__header .title__header--l {
+.title__header .title__header--large {
     color: #fff;
     font-size: 72px;
     margin: 0 0 45px 0;
 }
-.title__header .subtitle__header--l {
+.title__header .subtitle__header--large {
     font-size: 150px;
     line-height: 140px;
     margin: 0 0 90px 0;
