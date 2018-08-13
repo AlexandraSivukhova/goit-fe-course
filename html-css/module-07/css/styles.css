@@ -1,0 +1,245 @@
+/* montserrat-regular - cyrillic */
+/* @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-v12-cyrillic/montserrat-v12-cyrillic-regular.woff2') format('woff2'), 
+         url('../fonts/montserrat-v12-cyrillic/montserrat-v12-cyrillic-regular.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;     
+} */
+/* montserrat-500 - cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/montserrat-v12-cyrillic/montserrat-v12-cyrillic-500.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/montserrat-v12-cyrillic/montserrat-v12-cyrillic-500.woff') format('woff'); /* Modern Browsers */
+}
+/* montserrat-800 - cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-v12-cyrillic/montserrat-v12-cyrillic-800.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/montserrat-v12-cyrillic/montserrat-v12-cyrillic-800.woff') format('woff'); /* Modern Browsers */
+    font-style: normal;
+    font-weight: 800;
+}
+/* roboto-slab-regular - cyrillic */
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fonts/roboto-slab-v7-cyrillic/roboto-slab-v7-cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/roboto-slab-v7-cyrillic/roboto-slab-v7-cyrillic-regular.woff') format('woff'); /* Modern Browsers */
+    font-style: normal;
+    font-weight: 400;
+}
+
+.wrp {
+    width: 940px;
+    margin: auto;
+}
+a {text-decoration: none;} 
+#logo a {
+    text-decoration: none;
+    font-family: 'Damion', cursive;
+    font-size: 30px;
+    color: #fed136;
+    line-height: 31px;
+}
+#logo {
+    float: left;
+    margin-top: 50px;
+}
+ul {
+    width: 480px;
+    list-style: none;
+    font-size: 0;
+    text-align: center;
+    padding: 50px 0 90px 0;
+    margin-left: auto;
+}
+li {
+    display: inline-block;
+    margin-right: 39px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+}
+li:last-of-type {
+    margin-right: 0;
+}
+nav a {
+    text-decoration: none;
+    display: block;
+    color: #222222;
+    text-transform: uppercase;
+    font-size: 14px;  
+    line-height: 41px;
+}
+nav a:hover {
+    color: #fed136; 
+    transition-property: color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}
+.wrp h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    color: #222222;
+    line-height: 75px;
+    letter-spacing: -0.025em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.wrp h3 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 400i;
+    font-size: 16px;
+    color: #777777;
+    text-align: center;
+    margin-bottom: 75px;
+}
+.circle1  {
+    background-image: url(../img/icon1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(254, 209, 54);
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+}
+.circle2  {
+    background-image: url(../img/icon2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(254, 209, 54);
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+}
+.circle3  {
+    background-image: url(../img/icon3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(254, 209, 54);
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+}
+.wrp .services {
+    min-height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 115px;
+}
+.wrp .services .item {
+    width: 290px;
+    min-height: auto;
+}
+.wrp .services .text-services h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 75px;
+    letter-spacing: -0.025em;
+    color: #222222;
+}
+.wrp .services .text-services p {
+    width: 300px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -0.025em;
+    color: #999999;
+}
+.wrp--footer {
+    width: 100%;
+    height: 100%;
+    background-color: #222222;
+    background-image: url(../img/bg1.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+.wrp--footer h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    color: #fff;
+    line-height: 75px;
+    text-align: center;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    padding-top: 100px;
+}
+form {
+    width: 940px;
+    margin-top: 65px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.column {
+    display: flex;
+    flex-flow: column;
+}
+input, textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 1px solid #bbbbbb;
+    outline: none;
+}
+.subject:focus {
+    box-shadow: 0 0 2px 2px #36fe36;
+}
+input {
+    width: 435px;
+    height: 50px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+textarea {
+    width: 415px;
+    height: 182px;
+    resize: none;
+    padding: 20px;
+}
+.submit {
+    width: 240px;
+    height: 65px;
+    background-color: #fed136;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 115px;
+    cursor: pointer;
+}
+.outline:invalid:not(:placeholder-shown) {
+    box-shadow: 0 0 2px 2px #fe3636;
+}
+.outline:valid:not(:placeholder-shown) {
+    box-shadow: 0 0 2px 2px #36fe36;
+} 
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}

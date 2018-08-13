@@ -55,8 +55,7 @@ nav a {
     letter-spacing: -0.02em;
     font-size: 14px;  
 }
-nav a:hover,
-nav a.active {
+nav a:hover {
     color: #1abc9c;
 }
 h2 {
@@ -178,10 +177,11 @@ button {
     margin-bottom: 81px;
     border-radius: 5px;
     border: none;
-}
-button:active {
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.39);
+    cursor: pointer;
 }
 button:focus {
     outline: none;
+}
+button:active {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.39);
 }
