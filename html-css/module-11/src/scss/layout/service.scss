@@ -1,0 +1,62 @@
+.title {
+    color: $main-color;
+    text-align: center;
+}
+.title__main {
+    @extend %title-set;
+    margin: 50px 0 22px 0;
+} 
+.subtitle__main {
+    @extend %subtitle-set;
+
+    &--after::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 60px;
+        background-color: $hover-color-main;
+        margin: auto;
+        margin-top: 42px;
+        margin-bottom: 65px;
+    }
+}
+.wrp .container {
+    width: 1150px;
+    height: 240px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto; 
+    justify-content: space-between;
+    margin-bottom: 92px;
+    align-content: space-between;
+}
+.services {
+    width: 361px;
+    height: 67px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.services__benifits {
+    width: 300px;
+}
+.services__icon {
+    margin-top: 20px;
+}
+.services__title {
+    width: 300px;
+    font-family: $subtitle-font;
+    font-weight: 400;
+    font-size: 14px;
+    color: $main-color;
+    text-transform: uppercase;
+    margin-bottom: 19px;
+}
+.services__text {
+    width: 300px;
+    font-family: $main-font;
+    font-size: 15px;
+    line-height: 24px;
+    color: $main-color-text;
+}

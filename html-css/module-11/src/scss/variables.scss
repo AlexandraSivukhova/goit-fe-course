@@ -1,0 +1,32 @@
+// COLORS
+
+$header-color: #fff;
+$hover-color-text: #fce38a;
+$hover-color-main: #f38181;
+$background-color: #95e1d3;
+$border-color-form: #cccccc;
+$gradient-color-top: rgba(243, 129, 129, 0.9);
+$gradient-color-bottom: rgba(252, 227, 138, 0.9);
+$main-color: #333333;
+$main-color-text:#999999;
+
+// FONTS
+$main-font: 'Roboto', sans-serif;
+$title-font: 'Kaushan Script', cursive;
+$subtitle-font: 'Montserrat', sans-serif;
+
+// PLACEHOLDER
+
+%title-set {
+    font-family: $title-font;
+    font-size: 24px;
+}
+%subtitle-set {
+    font-family: $subtitle-font;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+  
+

@@ -1,0 +1,26 @@
+.wrp--footer {
+    max-width: 100%;
+    height: 62px;
+    border-top: 1px solid $main-color-text;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrp--footer p {
+    font-family: $subtitle-font;
+    font-weight: 400;
+    font-size: 14px;
+}
+.wrp--footer a {
+    font-family: $subtitle-font;
+    font-weight: 400;
+    font-size: 14px;
+    color: $main-color;
+}
+.wrp--footer a:hover {
+    color: $hover-color-main;
+    transition-property: color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}

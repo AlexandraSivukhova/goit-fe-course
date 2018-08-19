@@ -1,0 +1,21 @@
+/*
+    Import partials below
+*/
+@import 'normalize';
+@import 'variables';
+
+/*
+    COMPONENTS
+*/
+@import 'components/logo';
+@import 'components/nav';
+@import 'components/button';
+@import 'components/form';
+
+/*
+    LAYOUT
+*/
+@import 'layout/header';
+@import 'layout/service';
+@import 'layout/team';
+@import 'layout/footer';

@@ -1,0 +1,32 @@
+.wrp {
+    max-width: 1200px;
+    margin: auto;
+}
+a {text-decoration: none;} 
+
+.header {
+    max-width: 1920px;
+    height: auto;
+    background: linear-gradient($gradient-color-top, $gradient-color-bottom), url('../img/bg-header-min.png') no-repeat;    
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-rezolution: 2dppx) {
+    .header {
+        background: linear-gradient($gradient-color-top, $gradient-color-bottom), url('../img/bg-header@2x-min.png') no-repeat;    
+        background-size: cover;
+        background-position: center;
+    }
+}
+.title__header .title__header--large {
+    color: $header-color;
+    font-size: 72px;
+    margin: 0 0 45px 0;
+}
+.title__header .subtitle__header--large {
+    font-size: 150px;
+    line-height: 140px;
+    margin: 0 0 90px 0;
+    color: $header-color;
+}
