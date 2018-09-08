@@ -43,28 +43,17 @@ const Error = 'Ошибка! Логин должен быть от 4 до 16 с�
 const Exists = 'Такой логин уже используется!';
 
 const isLoginValid = function(login) {
-  if (login.length >= 4 && login.length <= 16) {
-    return true;
-  }
-
-  return false;
+  return (login.length >= 4 && login.length <= 16)
 };
  
 const isLoginUnique = function(allLogins, login) {
-  if (  allLogins.includes(login)) {
-    return true;
-  }
-  return false;
+  return (allLogins.includes(login)) 
 };
 
 const addLogin = function(login) {
-  if (!isLoginValid(login)) {
-    return Error;
-  }
+  if (!isLoginValid(login)) return Error;
 
-  if (!isLoginUnique(logins, login)) {
-    return Exists;
-  } 
+  if (!isLoginUnique(logins, login)) return Exists;
   
   logins.push(login);
   return Success;
