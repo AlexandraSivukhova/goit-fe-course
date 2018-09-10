@@ -38,25 +38,20 @@
 */
 
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
-const Success = 'Логин успешно добавлен!';
-const Error = 'Ошибка! Логин должен быть от 4 до 16 символов';
-const Exists = 'Такой логин уже используется!';
+const SUCCESS_MESSAGE = 'Логин успешно добавлен!';
+const ERROR_MESSAGE = 'Ошибка! Логин должен быть от 4 до 16 символов';
+const EXISTS_MESSAGE = 'Такой логин уже используется!';
 
-const isLoginValid = function(login) {
-  return (login.length >= 4 && login.length <= 16)
-};
- 
-const isLoginUnique = function(allLogins, login) {
-  return (allLogins.includes(login)) 
-};
+const isLoginValid = (login) => (login.length >= 4 && login.length <= 16);
+const isLoginUnique = (allLogins, login) => (allLogins.includes(login));
 
 const addLogin = function(login) {
-  if (!isLoginValid(login)) return Error;
+  if (!isLoginValid(login)) return ERROR_MESSAGE;
 
-  if (!isLoginUnique(logins, login)) return Exists;
+  if (isLoginUnique(logins, login)) return EXISTS_MESSAGE;
   
   logins.push(login);
-  return Success;
+  return SUCCESS_MESSAGE;
 };
 
 // Вызовы функции для проверки
