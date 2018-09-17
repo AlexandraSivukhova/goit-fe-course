@@ -32,11 +32,8 @@ const products = {
     },
    
     this.countChange = function(totalPrice) {
-       if (this.customerMoney < totalPrice) {
-         return null;
-       }
-      return this.customerMoney - totalPrice;     
-    },
+      return (this.customerMoney < totalPrice ? null : this.customerMoney - totalPrice);     
+   },
 
     this.onSuccess = (change) => console.log(`Спасибо за покупку, ваша сдача ${change}!`);
     this.onError = () => console.log('Очень жаль, вам не хватает денег на покупки');
