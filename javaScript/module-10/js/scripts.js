@@ -6,7 +6,8 @@ const postBtn = document.querySelector(".post-form .js-post");
 const deleteBtn = document.querySelector(".js-delete");
 const updateBtn = document.querySelector(".js-update");
 
-const inputGet = document.querySelector('.search-form input');
+const formGetId = document.querySelector(".search-form");
+const inputGet = formGetId.querySelector('.search-form input');
 
 const formPost = document.querySelector('.post-form');
 const inputPostName = formPost.querySelector('input[name="name"]');
@@ -80,6 +81,8 @@ function getUserById(e) {
     })
     .catch(err => {
         console.error("Error: ", err);
+
+    formGetId.reset();
     });
 }
 
@@ -101,6 +104,7 @@ function addUser(e) {
     if (response.ok) return response.json();
     throw new Error(response.statusText);
   })
+  .then(res => alert(`Вы добавили нового пользователя: Имя: ${res.data.name}, возраст: ${res.data.age}`))
   .catch(error => console.log('ERROR' + error));
 
   formPost.reset();
@@ -120,6 +124,8 @@ function removeUser(e) {
       if (response.ok) return response.json();
       throw new Error(response.statusText);
     })
+    .then(res => alert(`Пользователь с ID "${res.data.id}" успешно удален`))
+
     .catch(err => console.log(err));
 
     formDelete.reset();
@@ -143,6 +149,7 @@ function updateUser(e) {
       if (response.ok) return response.json();
       throw new Error(response.statusText);
     })
+    .then(res => alert(`Данные пользователя с ID "${res.data.id}" успешно обновлены`))
     .catch(err => console.log(err));
 
     formUpdate.reset();

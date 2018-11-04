@@ -11,7 +11,7 @@ body {
   
   .container {
     padding-top: 20px;
-    width: 400px;
+    width: 410px;
     min-width: 400px;
   }
   
@@ -142,6 +142,10 @@ body {
       color: #616161;
     }
   }
+  .delete-form .mdc-btn {
+      padding: 0 27px
+  }
+
   .update-form {
     display: flex;
     justify-content: flex-start;
