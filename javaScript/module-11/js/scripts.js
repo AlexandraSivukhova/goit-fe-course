@@ -147,11 +147,15 @@ function getRender(elemFilter) {
     
 function onSubmit(e) { 
   e.preventDefault();
+
+  filter = { size: [], color: [], release_date: [] };
+
   Array.from(inputs).filter(elem => {
     if (elem.checked) {
       filter[elem.name].push(elem.value);
     }
   });
+  console.log(filter)
   getRender(filter);
 };
 
