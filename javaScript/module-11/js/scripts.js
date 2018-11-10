@@ -127,8 +127,6 @@ const inputs = form.querySelectorAll('input');
 const grid = document.querySelector('#grid');
 const source = document.querySelector('#laptop-card').innerHTML.trim();
 const template = Handlebars.compile(source);
-const markup = laptops.reduce((acc, laptop) => acc + template(laptop), '');
-grid.innerHTML = markup;
 
 function getRender(elemFilter) { 
   let markup = '';
@@ -157,7 +155,7 @@ function onSubmit(e) {
   getRender(filter);
 };
 
-// getRender(filter);
+getRender(filter);
 
 function onReset() {
   form.reset();
