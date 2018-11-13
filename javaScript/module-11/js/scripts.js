@@ -117,7 +117,8 @@ const laptops = [
   },
 ];
 
-let filter = { size: [], color: [], release_date: [] };
+let filter = {};
+let markup = '';
 
 const form = document.querySelector('.js-form');
 const btnFilter = form.querySelector('button[type="submit"]');
@@ -128,46 +129,49 @@ const grid = document.querySelector('#grid');
 const source = document.querySelector('#laptop-card').innerHTML.trim();
 const template = Handlebars.compile(source);
 
-function getRender(elemFilter) { 
+
+
+function getRender(itemsFilter) { 
   let markup = '';
+  let is_output = true;
 
   laptops.forEach(laptop => {
-    if( (elemFilter.size.length == 0 
-        || elemFilter.size.find(item => item == laptop.size) == laptop.size) 
-      && (elemFilter.color.length == 0 
-        || elemFilter.color.find(item => item == laptop.color) == laptop.color)
-      && (elemFilter.release_date.length == 0 
-        || elemFilter.release_date.find(item => item == laptop.release_date) == laptop.release_date)) {
+    is_output = true;
 
-    markup += template(laptop);
-  }
-    grid.innerHTML = markup;
+    for (let key in filter) {
+      if ( itemsFilter[key].indexOf(laptop[key]) == -1
+        && itemsFilter[key].length > 0 ) {
+          is_output = false;
+      }
+    }
+      if (is_output) {
+        markup += template(laptop);
+      }   
   });
-};
-    
+    grid.innerHTML = markup;
+  }
+
 function onSubmit(e) { 
   e.preventDefault();
 
-  filter = { size: [], color: [], release_date: [] };
+  filter = {size: [], color: [], release_date: []};
 
   Array.from(inputs).filter(elem => {
     if (elem.checked) {
-      filter[elem.name].push(elem.value);
+      filter[elem.name].push((!isNaN(elem.value) ? +elem.value : elem.value));
     }
   });
-  console.log(filter)
+  
   getRender(filter);
 };
 
-getRender(filter);
-
 function onReset() {
-  form.reset();
-  filter.size = [];
-  filter.color = [];
-  filter.release_date = [];
+  filter = {};
   getRender(filter);
+  form.reset();
 };
 
 btnFilter.addEventListener('click', onSubmit);
 btnReset.addEventListener('click', onReset);
+
+window.onload = getRender(filter);
