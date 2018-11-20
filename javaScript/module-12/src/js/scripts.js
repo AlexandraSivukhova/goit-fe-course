@@ -33,7 +33,6 @@ let link = getLocalStorage();
 const form = document.querySelector('.form');
 const input = form.querySelector('.input');
 const button = form.querySelector('.button');
-const btnDelete = document.querySelector('.delete');
 const source = document.querySelector('#list').innerHTML.trim();
 const template = Handlebars.compile(source);
 const grid = document.querySelector('#grid');
@@ -70,18 +69,13 @@ function onAddUrlList(e) {
 
 function getRender(links, list) {
     let markup = '';
-    
-    links.reverse().forEach((item, index) => {
-        item['position'] = index;
-        markup += template(item);
-    });
-    list.innerHTML = markup; 
 
-    return {
-        addNewCard(card) {
-          list.insertAdjacentHTML('afterbegin', template(card));
-        },
-      };
+    for (var index = (links.length - 1); index >= 0; index--) {
+        links[index]['position'] = index;
+        markup += template(links[index]);
+    }
+
+    list.innerHTML = markup; 
 }
 
 function onDeleteUrl(event) {

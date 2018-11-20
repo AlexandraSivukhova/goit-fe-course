@@ -32,8 +32,6 @@ var link = getLocalStorage();
 var form = document.querySelector('.form');
 var input = form.querySelector('.input');
 var button = form.querySelector('.button');
-var list = document.querySelector('.list__content');
-var btnDelete = document.querySelector('.delete');
 var source = document.querySelector('#list').innerHTML.trim();
 var template = Handlebars.compile(source);
 var grid = document.querySelector('#grid');
@@ -65,18 +63,20 @@ function onAddUrlList(e) {
     link.push({
       url: url
     });
-    getRender(link);
     setLocalStorage(link);
+    getRender(link, grid);
   }
 }
 
-function getRender(links) {
+function getRender(links, list) {
   var markup = '';
-  links.reverse().forEach(function (item, index) {
-    item['position'] = index;
-    markup += template(item);
-  });
-  grid.innerHTML = markup;
+
+  for (var index = links.length - 1; index >= 0; index--) {
+    links[index]['position'] = index;
+    markup += template(links[index]);
+  }
+
+  list.innerHTML = markup;
 }
 
 function onDeleteUrl(event) {
@@ -86,10 +86,10 @@ function onDeleteUrl(event) {
       return num.position != i;
     });
     setLocalStorage(link);
-    getRender(link);
+    getRender(link, grid);
   }
 }
 
 button.addEventListener("click", onAddUrlList);
 grid.addEventListener("click", onDeleteUrl);
-window.onload = getRender(link);
+window.onload = getRender(link, grid);
