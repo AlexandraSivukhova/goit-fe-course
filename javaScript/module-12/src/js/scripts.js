@@ -33,7 +33,6 @@ let link = getLocalStorage();
 const form = document.querySelector('.form');
 const input = form.querySelector('.input');
 const button = form.querySelector('.button');
-const list = document.querySelector('.list__content');
 const btnDelete = document.querySelector('.delete');
 const source = document.querySelector('#list').innerHTML.trim();
 const template = Handlebars.compile(source);
@@ -64,20 +63,25 @@ function onAddUrlList(e) {
     } else {
         form.reset();
         link.push({url});
-        getRender(link);
         setLocalStorage(link);
+        getRender(link, grid);
     }
 }
 
-function getRender(links) {
+function getRender(links, list) {
     let markup = '';
     
     links.reverse().forEach((item, index) => {
         item['position'] = index;
         markup += template(item);
     });
-    
-    grid.innerHTML = markup; 
+    list.innerHTML = markup; 
+
+    return {
+        addNewCard(card) {
+          list.insertAdjacentHTML('afterbegin', template(card));
+        },
+      };
 }
 
 function onDeleteUrl(event) {
@@ -85,11 +89,11 @@ function onDeleteUrl(event) {
     let i = event.target.dataset.position;
     link = link.filter(num => num.position != i);
     setLocalStorage(link);
-    getRender(link);
+    getRender(link, grid);
   }
 }
 
 button.addEventListener("click", onAddUrlList);
 grid.addEventListener("click", onDeleteUrl);
 
-window.onload = getRender(link);
+window.onload = getRender(link, grid);
