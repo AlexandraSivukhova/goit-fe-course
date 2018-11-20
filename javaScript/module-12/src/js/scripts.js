@@ -63,11 +63,11 @@ function onAddUrlList(e) {
         form.reset();
         link.push({url});
         setLocalStorage(link);
-        getRender(link, grid);
+        getRender(link);
     }
 }
 
-function getRender(links, list) {
+function getRender(links) {
     let markup = '';
 
     for (var index = (links.length - 1); index >= 0; index--) {
@@ -75,7 +75,7 @@ function getRender(links, list) {
         markup += template(links[index]);
     }
 
-    list.innerHTML = markup; 
+    grid.innerHTML = markup; 
 }
 
 function onDeleteUrl(event) {
@@ -83,11 +83,11 @@ function onDeleteUrl(event) {
     let i = event.target.dataset.position;
     link = link.filter(num => num.position != i);
     setLocalStorage(link);
-    getRender(link, grid);
+    getRender(link);
   }
 }
 
 button.addEventListener("click", onAddUrlList);
 grid.addEventListener("click", onDeleteUrl);
 
-window.onload = getRender(link, grid);
+window.onload = getRender(link);
