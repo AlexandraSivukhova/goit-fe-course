@@ -57,8 +57,9 @@ button, .delete {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    list-style: none;
 }
-.item_list {
+.item_list li {
     display: flex;
     align-items: center;
     justify-content: space-between;
