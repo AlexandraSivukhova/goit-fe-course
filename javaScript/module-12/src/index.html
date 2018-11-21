@@ -13,13 +13,15 @@
             <input type="text" class="input" placeholder="Введите URL для закладки">
             <button type="submit" class="button">Add</button>
         </form>
-    <div id="grid"></div>  
+    <ul id="grid"></ul>  
 
         <template id="list">
-            <div class="wrp">
-                <a class="list__content" href="{{url}}">{{url}}</a>
-                <button data-position="{{position}}" type="submit" class="delete">Delete</button>
-            </div>
+
+                <li class="item_list">
+                    <a class="list__content" href="{{url}}">{{url}}</a>
+                    <button data-position="{{position}}" type="submit" class="delete">Delete</button>
+                </li>    
+ 
         </template>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>

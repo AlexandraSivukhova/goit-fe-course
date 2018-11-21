@@ -35,6 +35,7 @@ var button = form.querySelector('.button');
 var source = document.querySelector('#list').innerHTML.trim();
 var template = Handlebars.compile(source);
 var grid = document.querySelector('#grid');
+var list = document.querySelector('.list');
 
 function setLocalStorage(value) {
   localStorage.setItem('saved_url', JSON.stringify(value));
@@ -60,36 +61,39 @@ function onAddUrlList(e) {
     return alert('Введите, пожалуйста, правильный URL.');
   } else {
     form.reset();
-    link.push({
+    var item = {
       url: url
-    });
+    };
+    var key = link.push(item);
+    getRenderItem(key, item);
     setLocalStorage(link);
-    getRender(link);
   }
 }
 
-function getRender(links) {
-  var markup = '';
-
-  for (var index = links.length - 1; index >= 0; index--) {
-    links[index]['position'] = index;
-    markup += template(links[index]);
-  }
-
-  grid.innerHTML = markup;
+function getRenderItem(key, value) {
+  value['position'] = key;
+  grid.insertAdjacentHTML('afterbegin', template(value));
 }
 
-function onDeleteUrl(event) {
-  if (event.target.nodeName.toLowerCase() === 'button') {
-    var i = event.target.dataset.position;
-    link = link.filter(function (num) {
-      return num.position != i;
-    });
-    setLocalStorage(link);
-    getRender(link);
-  }
+function getRenderPage(links) {
+  links.forEach(function (value, key) {
+    getRenderItem(key, value);
+  });
 }
 
+function onDeleteUrl(_ref) {
+  var target = _ref.target;
+  if (target.nodeName.toLowerCase() !== 'button') return;
+  var item = target.parentNode;
+  item.remove();
+  var i = event.target.dataset.position;
+  link = link.filter(function (num) {
+    return num.position != i;
+  });
+  setLocalStorage(link);
+}
+
+console.log(link);
 button.addEventListener("click", onAddUrlList);
 grid.addEventListener("click", onDeleteUrl);
-window.onload = getRender(link);
+window.onload = getRenderPage(link);

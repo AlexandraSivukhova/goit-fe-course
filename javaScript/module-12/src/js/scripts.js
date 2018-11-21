@@ -36,6 +36,7 @@ const button = form.querySelector('.button');
 const source = document.querySelector('#list').innerHTML.trim();
 const template = Handlebars.compile(source);
 const grid = document.querySelector('#grid');
+const list = document.querySelector('.list');
 
 function setLocalStorage(value) {
     localStorage.setItem('saved_url', JSON.stringify(value));
@@ -43,7 +44,6 @@ function setLocalStorage(value) {
   
 function getLocalStorage() {
     const data = localStorage.getItem('saved_url');
-
     return data ? JSON.parse(data) : [];
 }
 
@@ -61,33 +61,40 @@ function onAddUrlList(e) {
         return alert('Введите, пожалуйста, правильный URL.');
     } else {
         form.reset();
-        link.push({url});
+
+        let item = {url};
+        let key = link.push(item);
+        
+        getRenderItem(key, item);
+
         setLocalStorage(link);
-        getRender(link);
     }
 }
 
-function getRender(links) {
-    let markup = '';
-
-    for (var index = (links.length - 1); index >= 0; index--) {
-        links[index]['position'] = index;
-        markup += template(links[index]);
-    }
-
-    grid.innerHTML = markup; 
+function getRenderItem(key, value) {
+    value['position'] = key;
+    grid.insertAdjacentHTML('afterbegin', template(value));
 }
 
-function onDeleteUrl(event) {
-  if (event.target.nodeName.toLowerCase() === 'button') {
+function getRenderPage(links) {
+    links.forEach(function (value, key) {
+        getRenderItem(key, value);
+    });
+}
+
+function onDeleteUrl({ target }) {
+  if (target.nodeName.toLowerCase() !== 'button') return;
+    const item = target.parentNode;
+    item.remove();
+
     let i = event.target.dataset.position;
     link = link.filter(num => num.position != i);
+    
     setLocalStorage(link);
-    getRender(link);
-  }
 }
+console.log(link)
 
 button.addEventListener("click", onAddUrlList);
 grid.addEventListener("click", onDeleteUrl);
 
-window.onload = getRender(link);
+window.onload = getRenderPage(link);
