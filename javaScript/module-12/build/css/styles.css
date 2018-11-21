@@ -381,7 +381,8 @@ body {
   display: flex;
 }
 
-.wrapper {
+ul {
+  list-style: none;
   margin: auto;
   min-width: 760px;
 }
@@ -453,7 +454,7 @@ button:active,
   flex-direction: column;
 }
 
-.wrp {
+.item_list {
   display: flex;
   align-items: center;
   justify-content: space-between;
